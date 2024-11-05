@@ -10,9 +10,11 @@ namespace CRUD_de_Personas
     {
         string nombre;
         string apellido;
+        uint id;
 
-        public CPersona(string nombre, string apellido)
+        public CPersona(uint id ,string nombre, string apellido)
         {
+            this.id = id;
             this.nombre = nombre;
             this.apellido = apellido;
         }
@@ -20,10 +22,10 @@ namespace CRUD_de_Personas
 
         public string Nombre {  get { return nombre; } set { this.nombre = value; } }
         public string Apellido { get { return apellido; } set {  apellido = value; } }
-
+        public uint Id { get { return id; } set { id = value; } }   
         public override string ToString()
         {
-            return $" Nombre :{nombre} \t\t Apellido :{apellido}";
+            return $"{id} \b {nombre} \t\t {apellido}\n";
         }
     }
 }
