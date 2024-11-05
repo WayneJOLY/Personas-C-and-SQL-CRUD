@@ -40,7 +40,7 @@ namespace CRUD_de_Personas
 
                 while (datareader.Read())
                 {
-                    personas.Add( new CPersona(datareader["nombre"].ToString(), datareader["apellido"].ToString()));
+                    personas.Add( new CPersona(Convert.ToUInt32(datareader["id"]),datareader["nombre"].ToString(), datareader["apellido"].ToString()));
                     
                 }
                 return personas;
