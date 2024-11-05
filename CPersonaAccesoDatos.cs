@@ -9,7 +9,7 @@ namespace CRUD_de_Personas
 {
     static class CPersonaAccesoDatos
     {
-        //private SqlConnection connection = new SqlConnection("Data Source =GERALD\\MYGERALDDATABASE;Database=UTN_DB; User Id = sa; Password=root");
+        
         static string connectionString;
         static SqlCommand command;
         static SqlConnection connection;
@@ -19,7 +19,7 @@ namespace CRUD_de_Personas
         static CPersonaAccesoDatos()
         {
             connectionString = "Server=GERALD\\MYGERALDDATABASE;Database=UTN_DB;UID=sa;PWD=root;TrustServerCertificate=True";
-            //;                 //"Server=GERALD\\MYGERALDDATABASE;Database=myDataBase;User Id=myUsername;Password=myPassword;";
+            //;                 //"Server={Servername}\\{SQL DATABASE NAME };Database={myDataBase};User Id=myUsername;Password=myPassword;";
             connection = new SqlConnection(connectionString);
             command = new SqlCommand();
 
@@ -61,13 +61,13 @@ namespace CRUD_de_Personas
             {
                 command.Parameters.Clear();// Cuando trabajos con clases estatica es necesario para limpiar el buffer
                 connection.Open();
-                command.CommandText = $"DELETE *from PERSONAS WHERE ID =@id";
+                command.CommandText = $"DELETE from PERSONAS WHERE ID =@id";
                 command.Parameters.AddWithValue("@id", id);
                 command.ExecuteNonQuery();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                throw;
+                Console.WriteLine(ex.Message);
             }
             finally
             {
