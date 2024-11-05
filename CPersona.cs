@@ -12,13 +12,18 @@ namespace CRUD_de_Personas
         string apellido;
         uint id;
 
-        public CPersona(uint id ,string nombre, string apellido)
+        public CPersona(string nombre, string apellido)
+        {
+           
+            this.nombre = nombre;
+            this.apellido = apellido;
+        }
+        public CPersona(uint id,string nombre, string apellido)
         {
             this.id = id;
             this.nombre = nombre;
             this.apellido = apellido;
         }
-
 
         public string Nombre {  get { return nombre; } set { this.nombre = value; } }
         public string Apellido { get { return apellido; } set {  apellido = value; } }
