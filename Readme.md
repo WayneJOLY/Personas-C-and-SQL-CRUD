@@ -24,4 +24,4 @@ La tabla `Persona` está diseñada con los siguientes campos:
 
 1. **Clona el Repositorio**: Usa el siguiente comando para clonar el repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/tu_usuario/tu_repositorio.git
+   git clone https://github.com/WayneJOLY/Personas-C-and-SQL-CRUD.git
